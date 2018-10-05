@@ -3,8 +3,12 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import random as rnd
+import matplotlib.backends.backend_pdf
+
 
 data = np.genfromtxt("data/rawTNO.txt", delimiter=";", names=True, dtype=None)
+pdf = matplotlib.backends.backend_pdf.PdfPages("graphs/Collison Center/allTNOs.pdf")
+
 
 for x in range(len(data)):
     d_list = []
@@ -18,11 +22,18 @@ for x in range(len(data)):
 
     smallestdV = sorted(d_list, key=lambda dV: dV[0])[:50]
     smallestdV = zip(*smallestdV)
-    plt.title("dv vs H")
+    plt.title("dv vs H \n" + data[x][0])
     plt.gca().set_xlim([0, 1.5])
-    plt.gca().set_ylim([0, 5])
+    plt.gca().set_ylim([-5, 5])
     plt.scatter(smallestdV[0], smallestdV[1])
-    plt.savefig("graphs/Collison Center/" + data[x][0]+".png")
+    pdf.savefig()
     plt.gcf().clear()
+
+#plt.savefig("graphs/Collison Center/" + data[x][0]+".png")
+pdf.close()
+
+
+
+
 
 
