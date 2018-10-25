@@ -8,9 +8,6 @@ import math as mt
 import csv
 
 
-#plt.rcParams['figure.figsize'] = (16, 9)
-
-#colors = ['b.', 'g.', 'r.','c.','m.','y.','k.', '#eeffff', '#8a2be2', '#ffffff', '#030303', '#cd853f', '#ee3a8c']
 colors = ['b.', 'w.', 'w.','w.','w.','w.','w.', 'w.', 'w.', '.', 'w.', 'w.', 'w.']
 
 clusters = [[],[],[],[],[],[],[],[],[],[],[],[],[]]
