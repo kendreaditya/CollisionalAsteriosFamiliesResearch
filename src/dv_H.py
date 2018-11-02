@@ -1,5 +1,4 @@
 # dv = abs(2.5*(a-b)/(a+b)) + abs(4*(f-e)/(f+e)) + abs(4*(k-j)/(k+j))
-
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -20,8 +19,14 @@ for i in range(len(data)):
 
 smallestdV = sorted(d_list, key=lambda dV: dV[0])[:50]
 smallestdV = zip(*smallestdV)
+plt.figure(1)
+plt.title("dv vs H /n top 50")
+plt.scatter(smallestdV[0], smallestdV[1], .5)
+
+plt.figure(2)
 plt.title("dv vs H")
-plt.scatter(smallestdV[0], smallestdV[1])
+d_list = zip(*d_list)
+plt.scatter(d_list[0], d_list[1],.5)
 plt.show()
 
 
