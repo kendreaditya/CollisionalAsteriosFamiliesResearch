@@ -17,7 +17,7 @@ for x in range(len(data)):
         dv_Values.append([dv, data[i][2], data[i][3], data[i][4]])
 
     dv_Values.sort()
-    ax.scatter(dv_Values[5][1], dv_Values[5][2], dv_Values[5][2], s=2, c="blue")
+    ax.scatter(dv_Values[5][1], dv_Values[5][2], dv_Values[5][2], s=2, c='blue')
     dv_Values = []
 
 plt.show()
